@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import sumithraPhoto from "@/assets/sumitra-kunche-main.jpg";
 import "../css/Hero.css";
 import { Typewriter } from 'react-simple-typewriter'
+import herobg from '../assets/hero-bg-2.jpg'
+
 
 
 const Hero = () => {
@@ -14,9 +16,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative  py-3 sm:py-5 md:py-7 lg:py-9 xl:py-5 overflow-hidden">
+    <section style={{ backgroundImage: `url(${herobg})` }} className=" relative  py-3 sm:py-5 md:py-7 lg:py-9 xl:py-5 overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-secondary/40 via-background to-secondary-yellow/30" />
+      <div className="absolute " />
       {/* border-8 border-red-500 */}
       <div className="container mx-auto  relative z-10 max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Pre-headline Badge */}
