@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Primary colors - Deep Purple & Gold */
+    --primary: 277 100% 25.5%;
+    --primary-foreground: 0 0% 100%;
+    --primary-gold: 43 77% 52%;
+    --primary-gold-foreground: 277 100% 25.5%;
+
+    /* Secondary colors - Light Lavender & Light Yellow */
+    --secondary: 270 100% 93%;
+    --secondary-foreground: 277 100% 25.5%;
+    --secondary-yellow: 52 82% 81%;
+    --secondary-yellow-foreground: 277 100% 25.5%;
+
+    /* Tertiary colors - Green accents */
+    --tertiary: 120 61% 34%;
+    --tertiary-foreground: 0 0% 100%;
+    --tertiary-light: 90 100% 93%;
+    --tertiary-light-foreground: 120 61% 34%;
+
+    --muted: 270 100% 93%;
+    --muted-foreground: 277 40% 45%;
+
+    --accent: 43 77% 52%;
+    --accent-foreground: 277 100% 25.5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 277 30% 90%;
+    --input: 277 30% 90%;
+    --ring: 277 100% 25.5%;
+
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(277 100% 25.5%) 0%, hsl(277 80% 35%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(43 77% 52%) 0%, hsl(43 90% 65%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(277 100% 25.5%) 0%, hsl(277 80% 40%) 50%, hsl(43 77% 52%) 100%);
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px -2px hsl(277 100% 25.5% / 0.1);
+    --shadow-card-hover: 0 8px 30px -4px hsl(277 100% 25.5% / 0.2);
+    --shadow-button: 0 4px 14px -2px hsl(277 100% 25.5% / 0.3);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 277 40% 8%;
+    --foreground: 270 100% 95%;
+
+    --card: 277 40% 12%;
+    --card-foreground: 270 100% 95%;
+
+    --popover: 277 40% 12%;
+    --popover-foreground: 270 100% 95%;
+
+    --primary: 277 100% 70%;
+    --primary-foreground: 277 40% 8%;
+    --primary-gold: 43 90% 65%;
+    --primary-gold-foreground: 277 40% 8%;
+
+    --secondary: 277 40% 15%;
+    --secondary-foreground: 270 100% 95%;
+    --secondary-yellow: 52 60% 30%;
+    --secondary-yellow-foreground: 270 100% 95%;
+
+    --tertiary: 120 50% 50%;
+    --tertiary-foreground: 277 40% 8%;
+    --tertiary-light: 120 40% 20%;
+    --tertiary-light-foreground: 120 50% 80%;
+
+    --muted: 277 40% 15%;
+    --muted-foreground: 270 30% 65%;
+
+    --accent: 43 90% 65%;
+    --accent-foreground: 277 40% 8%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 270 100% 95%;
+
+    --border: 277 30% 20%;
+    --input: 277 30% 20%;
+    --ring: 277 100% 70%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+  }
+
+  .animate-slide-left {
+    animation: slide-left 0.8s ease-out forwards;
+  }
+
+  .animate-slide-right {
+    animation: slide-right 0.8s ease-out forwards;
+  }
+
+  /* Scroll reveal animations - smooth and subtle */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Premium hover effects */
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-left {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-right {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
